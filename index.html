@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASSESSMENT</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+  </head>
+  <body class="bg-gray-50 text-gray-900dark:bg-gray-900 dark:text-gray-100 min-h-screen flex flex-col backgroung:gray">
+
+
+      <!-- Header -->
+  <header class="bg-purple-950 text-white py-4 text-center shadow-lg
+  ">
+    <h1 class="text-5xl font-bold"> COUNTRY EXPLORER</h1>
+<br>
+    <marquee><h3>😍There are 195 countries in the world. 
+  Find out about each one of them!😍</h3></marquee>
+  
+  <div class="flex flex-wrap gap-2 items-center">
+    
+    
+      <!-- Search-->
+
+      <input 
+      id="searchInput" 
+      type="text" 
+      placeholder=" Type country name" 
+      class="px-3 py-2 rounded-lg text-black focus:outline-none "
+    />
+
+<!--filter-->
+
+    <select 
+      id="regionFilter" type="search" placeholder="Filter by Region" aria-label="Filter by Region"
+      class="px-3 py-2 rounded-lg text-black focus:outline-none"
+    >
+      <option value=""> Filter by Region</option>
+      <option value="Africa">Africa</option>
+      <option value="Americas">Americas</option>
+      <option value="Asia">Asia</option>
+      <option value="Europe">Europe</option>
+      <option value="Oceania">Oceania</option>
+    </select>
+ 
+
+  <!-- Sort -->
+      <select 
+        id="sortSelect" 
+        class="px-3 py-2 rounded-lg text-black focus:outline-none"
+      >
+        <option value="">Sort by Population</option>
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+      </select>
+      
+      <!-- 🌙 Dark Mode Toggle -->
+      <button 
+        id="toggleDarkMode" 
+        class="px-3 py-2 rounded-lg bg-gray-800 text-white hover:bg-gray-700 transition"
+      >
+         Dark Mode
+      </button>
+
+      <!--  Favorites -->
+      <button 
+        id="showFavorites" 
+        class="px-3 py-2 rounded-lg bg-pink-500 text-black hover:bg-yellow-400 transition"
+      >
+         Favorites
+      </button>
+
+      <!--  Back Button -->
+      <button 
+        id="showAll" 
+        class="px-3 py-2 rounded-lg bg-emerald-200 text-black hover:bg-emerald-300 transition hidden"
+      >
+         All Countries
+      </button>
+    </div>
+  </header>
+      
+      <!-- Loading & Error -->
+      <div id="loading" class="text-center text-lg font-semibold text-gray-500 hidden">Loading...</div>
+      <div id="error" class="text-center text-lg font-semibold text-red-500 hidden"> No countries found</div>
+
+      <!-- Country List -->
+      <main id="countryList" class="p-6 grid 
+     text-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    </main>
+      
+    <!-- Modal (Details) -->
+  <div 
+    id="modal" 
+    class="hidden fixed inset-0 bg-black/50 flex justify-center items-center z-50"
+  >
+    <div class="bg-white dark:bg-gray-800 dark:text-gray-100 p-6 rounded-xl max-w-md w-full relative">
+      <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-black">✖</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- Favorites Modal -->
+
+  <div 
+    id="favoritesModal" 
+    class="hidden fixed inset-0 bg-black/50 flex justify-center items-center z-50"
+  >
+    <div class="bg-white dark:bg-gray-800 dark:text-gray-100 p-6 rounded-xl max-w-lg w-full relative">
+      <button id="closeFavorites" class="absolute top-2 right-2 text-gray-500 hover:text-black">✖</button>
+      <h2 class="text-2xl font-bold mb-4"> Your Favorites 😘</h2>
+      <div id="favoritesContent"></div>
+    </div>
+  </div>
+
+
+    <script src="index.js"></script>
+</body>
+</html>
